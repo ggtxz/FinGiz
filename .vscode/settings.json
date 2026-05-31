@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "C_Cpp.clang_format_style": "file",
+  "cmake.configureOnOpen": true,
+  "files.autoSave": "onFocusChange",
+  "terminal.integrated.defaultProfile.windows": "bash (MSYS2)",
+  "terminal.integrated.profiles.windows": {
+    "bash (MSYS2)": {
+      "path": "C:\\msys64\\usr\\bin\\bash.exe",
+      "args": [
+        "--login",
+        "-i"
+      ],
+      "env": {
+        "MSYSTEM": "UCRT64",
+        "CHERE_INVOKING": "1"
+      }
+    }
+  }
+}

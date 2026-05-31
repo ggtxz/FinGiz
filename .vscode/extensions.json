@@ -1,0 +1,14 @@
+// Instale estas extensões:
+{
+  "recommendations": [
+    "ms-vscode.cpptools",           // C/C++ IntelliSense
+    "ms-vscode.cmake-tools",        // Suporte CMake
+    "twxs.cmake",                   // Syntax CMake
+    "vadimcn.vscode-lldb",          // Debugger
+    "matepek.vscode-catch2-test-adapter", // Testes
+    "gruntfuggly.todo-tree",        // Gerenciar TODOs
+    "eamodio.gitlens",              // Git avançado
+    "editorconfig.editorconfig",    // Padronização
+    "streetsidesoftware.code-spell-checker" // Spell checker
+  ]
+}
