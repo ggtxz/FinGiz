@@ -5,10 +5,23 @@
         80,
         120
     ],
-    "C_Cpp.clang_format_style": "file",
-    "cmake.configureOnOpen": true,
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 1.6,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.minimap.enabled": false,
     "files.autoSave": "onFocusChange",
+    "workbench.colorTheme": "Tokyo Night",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "right",
     "terminal.integrated.defaultProfile.windows": "bash (MSYS2)",
+    "terminal.integrated.fontFamily": "JetBrains Mono",
+    "terminal.integrated.fontSize": 13,
     "terminal.integrated.profiles.windows": {
         "bash (MSYS2)": {
             "path": "C:\\msys64\\usr\\bin\\bash.exe",
@@ -22,19 +35,12 @@
             }
         }
     },
-    "workbench.colorTheme": "Tokyo Night",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "JetBrains Mono",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": true,
-    "editor.lineHeight": 1.6,
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.smoothScrolling": true,
-    "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs": "active",
-    "editor.minimap.enabled": false,
-    "workbench.sideBar.location": "right",
-    "terminal.integrated.fontFamily": "JetBrains Mono",
-    "terminal.integrated.fontSize": 13
+    "C_Cpp.clang_format_style": "file",
+    "cmake.configureOnOpen": true,
+    "cmake.cmakePath": "C:/msys64/ucrt64/bin/cmake.exe",
+    "cmake.ctestPath": "C:/msys64/ucrt64/bin/ctest.exe",
+    "cmake.ctest.testExplorerIntegrationEnabled": true,
+    "cmake.ctestArgs": [
+        "--output-on-failure"
+    ]
 }

@@ -1,8 +1,20 @@
 [
 {
   "directory": "C:/Users/Gustavo/fingiz/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -IC:/Users/Gustavo/fingiz/include -g -std=c++23 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles\\fingiz.dir\\src\\main.cpp.obj -c C:\\Users\\Gustavo\\fingiz\\src\\main.cpp",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -IC:/Users/Gustavo/fingiz/include -IC:/Users/Gustavo/fingiz/tests/include -g -std=c++23 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles\\domain_lib.dir\\src\\lib\\domain\\account.cpp.obj -c C:\\Users\\Gustavo\\fingiz\\src\\lib\\domain\\account.cpp",
+  "file": "C:/Users/Gustavo/fingiz/src/lib/domain/account.cpp",
+  "output": "C:/Users/Gustavo/fingiz/build/CMakeFiles/domain_lib.dir/src/lib/domain/account.cpp.obj"
+},
+{
+  "directory": "C:/Users/Gustavo/fingiz/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -IC:/Users/Gustavo/fingiz/include -IC:/Users/Gustavo/fingiz/tests/include -g -std=c++23 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles\\fingiz.dir\\src\\main.cpp.obj -c C:\\Users\\Gustavo\\fingiz\\src\\main.cpp",
   "file": "C:/Users/Gustavo/fingiz/src/main.cpp",
   "output": "C:/Users/Gustavo/fingiz/build/CMakeFiles/fingiz.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Gustavo/fingiz/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DGTEST_LINKED_AS_SHARED_LIBRARY=1 -IC:/Users/Gustavo/fingiz/include -IC:/Users/Gustavo/fingiz/tests/include -g -std=c++23 -Wall -Wextra -Wpedantic -Werror -o tests\\CMakeFiles\\account.dir\\test_account.cpp.obj -c C:\\Users\\Gustavo\\fingiz\\tests\\test_account.cpp",
+  "file": "C:/Users/Gustavo/fingiz/tests/test_account.cpp",
+  "output": "C:/Users/Gustavo/fingiz/build/tests/CMakeFiles/account.dir/test_account.cpp.obj"
 }
 ]

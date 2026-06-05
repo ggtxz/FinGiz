@@ -1,7 +1,9 @@
+C:/Users/Gustavo/fingiz/build/CMakeFiles/domain_lib.dir
 C:/Users/Gustavo/fingiz/build/CMakeFiles/fingiz.dir
 C:/Users/Gustavo/fingiz/build/CMakeFiles/test.dir
 C:/Users/Gustavo/fingiz/build/CMakeFiles/edit_cache.dir
 C:/Users/Gustavo/fingiz/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Gustavo/fingiz/build/tests/CMakeFiles/account.dir
 C:/Users/Gustavo/fingiz/build/tests/CMakeFiles/test.dir
 C:/Users/Gustavo/fingiz/build/tests/CMakeFiles/edit_cache.dir
 C:/Users/Gustavo/fingiz/build/tests/CMakeFiles/rebuild_cache.dir
