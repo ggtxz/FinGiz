@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/Users/Gustavo/fingiz/build",
-  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -IC:/Users/Gustavo/fingiz/include -g -std=c++23 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles\\fingiz.dir\\src\\main.cpp.obj -c C:\\Users\\Gustavo\\fingiz\\src\\main.cpp",
-  "file": "C:/Users/Gustavo/fingiz/src/main.cpp",
-  "output": "C:/Users/Gustavo/fingiz/build/CMakeFiles/fingiz.dir/src/main.cpp.obj"
-}
-]
