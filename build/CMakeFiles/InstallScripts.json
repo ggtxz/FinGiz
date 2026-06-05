@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"C:/Users/Gustavo/fingiz/build/cmake_install.cmake",
-		"C:/Users/Gustavo/fingiz/build/tests/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
