@@ -1,9 +1,5 @@
 find_package(GTest CONFIG REQUIRED)
 
-# add_executable(units_tests
-#     #test_main.cpp
-# )
-
 add_executable(account
     test_account.cpp
 )
@@ -11,10 +7,8 @@ add_executable(account
 target_link_libraries(account
     PRIVATE
         GTest::gtest_main
-        domain_lib
+        fingiz_lib
 )
-
-target_include_directories(domain_lib PUBLIC include)
 
 add_test(
     NAME account
@@ -23,3 +17,16 @@ add_test(
 
 include(GoogleTest)
 gtest_discover_tests(account)
+
+# Testes do FinanceService
+add_executable(finance_service_test
+    test_finance_service.cpp
+)
+
+target_link_libraries(finance_service_test
+    PRIVATE
+        GTest::gtest_main
+        fingiz_lib
+)
+
+gtest_discover_tests(finance_service_test)

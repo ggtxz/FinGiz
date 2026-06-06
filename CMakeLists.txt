@@ -17,15 +17,18 @@ find_package(fmt CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
 
 # Executável principal
-add_library(domain_lib src/lib/domain/account.cpp)
-target_include_directories(domain_lib PUBLIC include)
+add_library(fingiz_lib
+    src/lib/domain/account.cpp
+    src/lib/services/finance_service.cpp
+)
+target_include_directories(fingiz_lib PUBLIC include)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
     fmt::fmt
     spdlog::spdlog
-    domain_lib
+    fingiz_lib
 )
 
 # Testes (opcional)
