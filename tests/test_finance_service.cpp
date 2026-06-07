@@ -15,51 +15,34 @@ using namespace fingiz::services;
 
 TEST(FinanceTest, ShouldAddTransactionIncomeSuccessfully) {
     Account acc(1, "Conta Corrente", WalletType::Bank);
-    Transaction trn(1, TransactionType::Income, "Teste", 1000, std::chrono::system_clock::now(), Category::Salary, 1);
     FinanceService fs;
-    bool result = fs.addTransaction(acc, trn);
+    bool result = fs.executeIncome(acc, 1000);
     EXPECT_TRUE(result);
     EXPECT_EQ(acc.getBalance(), 1000);
 }
 
 TEST(FinanceTest, ShouldAddTransactionExpenseSuccessfully) {
     Account acc(1, "Conta Corrente", WalletType::Bank);
-    Transaction trnIncome(1, TransactionType::Income, "Teste", 1000, std::chrono::system_clock::now(), Category::Salary,
-                          1);
-    Transaction trnExpense(2, TransactionType::Expense, "Teste", 100, std::chrono::system_clock::now(),
-                           Category::Salary, 1);
     FinanceService fs;
-    fs.addTransaction(acc, trnIncome);
-    bool result = fs.addTransaction(acc, trnExpense);
+    fs.executeIncome(acc, 1000);
+    bool result = fs.executeExpense(acc, 100);
     EXPECT_TRUE(result);
     EXPECT_EQ(acc.getBalance(), 900);
 }
 
-TEST(FinanceTest, ShouldAddTransactionIdFail) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
-    Transaction trn(1, TransactionType::Income, "Teste", 1000, std::chrono::system_clock::now(), Category::Salary, 2);
-    FinanceService fs;
-    EXPECT_THROW(fs.addTransaction(acc, trn), std::invalid_argument);
-}
-
 TEST(FinanceTest, ShouldAddTransactionIncomeFail) {
     Account acc(1, "Conta Corrente", WalletType::Bank);
-    Transaction trn(1, TransactionType::Income, "Teste", -1000, std::chrono::system_clock::now(), Category::Salary, 1);
     FinanceService fs;
-    bool result = fs.addTransaction(acc, trn);
+    bool result = fs.executeIncome(acc, -1000);
     EXPECT_FALSE(result);
     EXPECT_EQ(acc.getBalance(), 0);
 }
 
 TEST(FinanceTest, ShouldAddTransactionExpenseFail) {
     Account acc(1, "Conta Corrente", WalletType::Bank);
-    Transaction trnIncome(1, TransactionType::Income, "Teste", 1000, std::chrono::system_clock::now(), Category::Salary,
-                          1);
-    Transaction trnExpense(2, TransactionType::Expense, "Teste", 10000, std::chrono::system_clock::now(),
-                           Category::Salary, 1);
     FinanceService fs;
-    fs.addTransaction(acc, trnIncome);
-    bool result = fs.addTransaction(acc, trnExpense);
+    fs.executeIncome(acc, 1000);
+    bool result = fs.executeExpense(acc, 10000);
     EXPECT_FALSE(result);
     EXPECT_EQ(acc.getBalance(), 1000);
 }
