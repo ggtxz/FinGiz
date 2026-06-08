@@ -9,13 +9,13 @@ namespace fingiz::domain {
 
 class Transaction {
 public:
-    Transaction(int id, TransactionType type, std::string description, long long amount,
-                std::chrono::system_clock::time_point date, Category category, int accountId)
+    Transaction(int id, TransactionType type, std::string description, long long amount, Category category,
+                int accountId)
         : id(id),
           type(type),
           description(std::move(description)),
           amount(amount),
-          date(date),
+          date(std::chrono::system_clock::now()),
           category(category),
           accountId(accountId) {};
     int getId() const { return id; };
