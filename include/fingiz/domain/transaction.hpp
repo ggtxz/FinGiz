@@ -7,16 +7,19 @@
 
 namespace fingiz::domain {
 
+struct TransactionData {
+    std::string description;
+    Category category;
+};
+
 class Transaction {
 public:
-    Transaction(int id, TransactionType type, std::string description, long long amount, Category category,
-                int accountId)
+    Transaction(int id, TransactionType type, TransactionData data, long long amount, int accountId)
         : id(id),
           type(type),
-          description(std::move(description)),
+          description(std::move(data.description)),
           amount(amount),
           date(std::chrono::system_clock::now()),
-          category(category),
           accountId(accountId) {};
     int getId() const { return id; };
     TransactionType getType() const { return type; };
