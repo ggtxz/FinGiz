@@ -2,7 +2,7 @@
 #include "fingiz/domain/account.hpp"
 #include "fingiz/domain/transaction.hpp"
 
-namespace fingiz::services {
+namespace fingiz::service {
 class FinanceService {
 public:
     bool executeIncome(domain::Account& acc, long long amount);
@@ -14,4 +14,4 @@ public:
 private:
     bool registerTransaction(int id, domain::TransactionType type, std::string description, long long amount);
 };
-}  // namespace fingiz::services
+}  // namespace fingiz::service

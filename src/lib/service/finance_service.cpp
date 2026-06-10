@@ -1,6 +1,6 @@
-#include "fingiz/services/finance_service.hpp"
+#include "fingiz/service/finance_service.hpp"
 
-namespace fingiz::services {
+namespace fingiz::service {
 
 bool FinanceService::executeIncome(domain::Account& acc, long long amount) {
     return acc.deposit(amount);
@@ -27,6 +27,6 @@ bool FinanceService::executeLoanPayment(domain::Account& acc, long long amount) 
     return acc.deposit(amount);
 }
 
-}  // namespace fingiz::services
+}  // namespace fingiz::service
 
 // Income, Expense, Transfer, LoanGiven, LoanPayment

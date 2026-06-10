@@ -19,7 +19,7 @@ find_package(spdlog CONFIG REQUIRED)
 # Executável principal
 add_library(fingiz_lib
     src/lib/domain/account.cpp
-    src/lib/services/finance_service.cpp
+    src/lib/service/finance_service.cpp
 )
 target_include_directories(fingiz_lib PUBLIC include)
 

@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 
-#include "fingiz/services/finance_service.hpp"
+#include "fingiz/service/finance_service.hpp"
 
 using namespace fingiz::domain;
-using namespace fingiz::services;
+using namespace fingiz::service;
 
 // montar acc e trans
 // chamar
@@ -14,7 +14,7 @@ using namespace fingiz::services;
 // testar: falha de id diferente, income negativo, expense maior que saldo
 
 TEST(FinanceTest, ShouldIncomeSuccessfully) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     bool result = fs.executeIncome(acc, 1000);
     EXPECT_TRUE(result);
@@ -22,7 +22,7 @@ TEST(FinanceTest, ShouldIncomeSuccessfully) {
 }
 
 TEST(FinanceTest, ShouldIncomeFail) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     bool result = fs.executeIncome(acc, -1000);
     EXPECT_FALSE(result);
@@ -30,7 +30,7 @@ TEST(FinanceTest, ShouldIncomeFail) {
 }
 
 TEST(FinanceTest, ShouldExpenseSuccessfully) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(acc, 1000);
     bool result = fs.executeExpense(acc, 100);
@@ -39,7 +39,7 @@ TEST(FinanceTest, ShouldExpenseSuccessfully) {
 }
 
 TEST(FinanceTest, ShouldExpenseFail) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(acc, 1000);
     bool result = fs.executeExpense(acc, 10000);
@@ -48,8 +48,8 @@ TEST(FinanceTest, ShouldExpenseFail) {
 }
 
 TEST(FinanceTest, ShouldTransferSuccessfully) {
-    Account src(1, "Conta Corrente", WalletType::Bank);
-    Account dest(2, "Binace", WalletType::Bank);
+    Account src(1, "Conta Corrente", WalletType::Bank, 0);
+    Account dest(2, "Binace", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(src, 1000);
     bool result = fs.executeTransfer(src, dest, 1000);
@@ -59,8 +59,8 @@ TEST(FinanceTest, ShouldTransferSuccessfully) {
 }
 
 TEST(FinanceTest, ShouldTransferFailedByNegativeValue) {
-    Account src(1, "Conta Corrente", WalletType::Bank);
-    Account dest(2, "Binace", WalletType::Bank);
+    Account src(1, "Conta Corrente", WalletType::Bank, 0);
+    Account dest(2, "Binace", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(src, 1000);
     bool result = fs.executeTransfer(src, dest, -1000);
@@ -70,8 +70,8 @@ TEST(FinanceTest, ShouldTransferFailedByNegativeValue) {
 }
 
 TEST(FinanceTest, ShouldTransferFailedByAmount) {
-    Account src(1, "Conta Corrente", WalletType::Bank);
-    Account dest(2, "Binace", WalletType::Bank);
+    Account src(1, "Conta Corrente", WalletType::Bank, 0);
+    Account dest(2, "Binace", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(src, 1000);
     bool result = fs.executeTransfer(src, dest, 10000);
@@ -81,7 +81,7 @@ TEST(FinanceTest, ShouldTransferFailedByAmount) {
 }
 
 TEST(FinanceTest, ShouldLoanGivenSuccessfully) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(acc, 1000);
     bool result = fs.executeLoanGiven(acc, 1000);
@@ -90,7 +90,7 @@ TEST(FinanceTest, ShouldLoanGivenSuccessfully) {
 }
 
 TEST(FinanceTest, ShouldLoanGivenFailByNegativeNumber) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(acc, 1000);
     bool result = fs.executeLoanGiven(acc, -1000);
@@ -99,7 +99,7 @@ TEST(FinanceTest, ShouldLoanGivenFailByNegativeNumber) {
 }
 
 TEST(FinanceTest, ShouldLoanGivenFailByAmount) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     fs.executeIncome(acc, 1000);
     bool result = fs.executeLoanGiven(acc, 10000);
@@ -108,7 +108,7 @@ TEST(FinanceTest, ShouldLoanGivenFailByAmount) {
 }
 
 TEST(FinanceTest, ShouldLoanPaymentSuccessfully) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     bool result = fs.executeLoanPayment(acc, 1000);
     EXPECT_TRUE(result);
@@ -116,7 +116,7 @@ TEST(FinanceTest, ShouldLoanPaymentSuccessfully) {
 }
 
 TEST(FinanceTest, ShouldLoanPaymentFailByNegativeNumber) {
-    Account acc(1, "Conta Corrente", WalletType::Bank);
+    Account acc(1, "Conta Corrente", WalletType::Bank, 0);
     FinanceService fs;
     bool result = fs.executeLoanPayment(acc, -1000);
     EXPECT_FALSE(result);
