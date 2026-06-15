@@ -15,6 +15,7 @@ endif()
 # Buscar bibliotecas
 find_package(fmt CONFIG REQUIRED)
 find_package(spdlog CONFIG REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 # Executável principal
 add_library(fingiz_lib
@@ -28,6 +29,7 @@ add_executable(${PROJECT_NAME} src/main.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE
     fmt::fmt
     spdlog::spdlog
+    nlohmann_json::nlohmann_json
     fingiz_lib
 )
 
